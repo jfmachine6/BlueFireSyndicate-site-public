@@ -1,0 +1,43 @@
+.show-explanation { color: var(--muted); }
+#show-feedback { margin-bottom: 28px; }
+#show-feedback p { margin-bottom: 0; }
+#show-retry { margin-top: 16px; font: inherit; cursor: pointer; }
+[hidden] { display: none !important; }
+.show-section { margin-bottom: 48px; }
+.show-views { display: flex; gap: 12px; margin-bottom: 24px; }
+.show-views button { font: inherit; cursor: pointer; }
+.agenda-month { margin: 24px 0 16px; font-size: 1.25rem; }
+.show-agenda { display: grid; gap: 16px; }
+.agenda-row { display: grid; grid-template-columns: 70px minmax(0, 1fr); gap: 16px; }
+.agenda-date { text-align: center; padding-top: 16px; color: var(--accent); }
+.agenda-date span, .agenda-date strong { display: block; }
+.agenda-date strong { font-size: 2rem; line-height: 1.2; }
+.show-agenda .show-card { padding: 22px; }
+#show-map { height: 560px; max-height: 70vh; border: 1px solid var(--border); border-radius: 8px; z-index: 0; }
+#show-map-retry { margin-bottom: 16px; cursor: pointer; }
+.show-pin span { display: block; width: 24px; height: 24px; border: 3px solid #fff; border-radius: 50%; background: #64748b; box-shadow: 0 1px 5px #0008; }
+.show-pin.attending span { background: #0079b8; }
+.show-pin.not-attending span { background: #a95a35; }
+.show-popup .show-card { background: #0d172b; padding: 14px; margin-bottom: 10px; }
+.show-popup .show-card h3 { font-size: 1.05rem; }
+.show-popup .show-card a { color: #8bd8ff; }
+.show-popup .show-card dd { color: #a6b8d4; }
+.show-popup .show-card p { margin: 0; }
+.show-card { border-left: 4px solid var(--border); overflow-wrap: anywhere; }
+.show-card.attending { border-left-color: var(--accent); }
+.show-card.not-attending { border-left-color: #d9a891; }
+.show-card.unconfirmed { border-left-color: #b6bfd1; }
+.show-card h3 { margin-top: 16px; font-size: 1.35rem; }
+.show-status { display: inline-block; border: 1px solid currentColor; border-radius: 6px; padding: 4px 10px; font-size: 0.9rem; font-weight: 700; }
+.attending .show-status { color: #8bd8ff; background: #123554; }
+.not-attending .show-status { color: #f0c6b3; background: #342827; }
+.unconfirmed .show-status { color: #d2dbec; background: #242e40; }
+.show-card dl { margin: 0; }
+.show-card dt { margin-top: 12px; color: #f4f7ff; font-weight: 700; }
+.show-card dd { margin: 3px 0 0; color: var(--muted); white-space: pre-line; }
+.show-map { display: inline-block; margin-top: 12px; }
+@media (max-width: 760px) {
+    .agenda-row { grid-template-columns: 42px minmax(0, 1fr); gap: 8px; }
+    .show-agenda .show-card { padding: 16px; }
+    #show-map { height: 440px; }
+}

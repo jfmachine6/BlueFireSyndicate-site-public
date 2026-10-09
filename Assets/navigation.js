@@ -8,7 +8,7 @@
             if (this.querySelector("nav")) return;
 
             const collectibles = this.getAttribute("branch") === "collectibles";
-            const brand = collectibles ? "BlueFire Collectibles" : "BlueFire Syndicate";
+            const brand = collectibles ? "BlueFire Collectibles™" : "BlueFire Syndicate™";
             const home = collectibles ? "Collectibles/" : "";
             const links = collectibles
                 ? [
@@ -20,8 +20,8 @@
                 ]
                 : [
                     ["Home", ""],
-                    ["BlueFire Collectibles", "Collectibles/"],
-                    ["BlueFire Games", "https://bluefiregames.net"]
+                    ["BlueFire Collectibles™", "Collectibles/"],
+                    ["BlueFire Games™", "https://bluefiregames.net"]
                 ];
 
             const nav = document.createElement("nav");
@@ -41,7 +41,7 @@
             const name = document.createElement("span");
             name.textContent = brand;
             const subtitle = document.createElement("small");
-            subtitle.textContent = collectibles ? "A BLUEFIRE SYNDICATE BRANCH" : "DEVELOPMENT / COMMERCE";
+            subtitle.textContent = collectibles ? "A BLUEFIRE SYNDICATE™ BRANCH" : "DEVELOPMENT / COMMERCE";
             name.append(subtitle);
             logo.append(image, name);
 

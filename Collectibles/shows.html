@@ -3,11 +3,13 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Find upcoming shows BlueFire Collectibles plans to attend. Show dates and locations will be published here.">
-    <title>Show list | BlueFire Collectibles</title>
+    <meta name="description" content="Browse card shows in agenda and map views, and see whether BlueFire Collectibles™ is attending.">
+    <title>Show List | BlueFire Collectibles™</title>
     <link rel="icon" href="../Assets/BlueFire_Logo_square_icon.png">
     <link rel="stylesheet" href="../Assets/site.css">
+    <link rel="stylesheet" href="Assets/shows.css">
     <script src="../Assets/navigation.js" defer></script>
+    <script src="Assets/shows.js" type="module"></script>
 </head>
 <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -20,17 +22,31 @@
     </site-navigation>
     <main id="main">
         <header class="page-heading">
-            <h1>Show list</h1>
-            <p class="lead">Shows BlueFire Collectibles plans to attend, with dates and locations.</p>
+            <h1>Show List</h1>
+            <p class="lead">Card shows, dates, and locations, with our attendance status for each show.</p>
+            <p class="show-explanation">Attending shows are marked in blue. Not attending and attendance unconfirmed are listed separately on each show.</p>
         </header>
-        <section id="show-list" class="notice" aria-labelledby="shows-title">
-            <h2 id="shows-title">Schedule coming soon</h2>
-            <p>The show list hasn't been published yet.</p>
-            <a href="./">BlueFire Collectibles home &rarr;</a>
+        <div id="show-views" class="show-views" hidden aria-label="Show List views">
+            <button type="button" class="button primary" data-view="agenda" aria-pressed="true" aria-controls="show-list">Agenda</button>
+            <button type="button" class="button" data-view="map" aria-pressed="false" aria-controls="show-map-panel">Map</button>
+        </div>
+        <div id="show-feedback" class="notice" role="status" aria-live="polite">
+            <p id="show-message">Loading the Show List...</p>
+            <button id="show-retry" class="button" type="button" hidden>Try again</button>
+        </div>
+        <noscript><p class="notice">JavaScript is needed to load the current Show List. Enable JavaScript and reload this page to see the schedule.</p></noscript>
+        <div id="show-list" aria-busy="true"></div>
+        <section id="show-map-panel" hidden aria-labelledby="show-map-title">
+            <h2 id="show-map-title">Show locations</h2>
+            <p>Includes past and upcoming shows. Shows with coordinates within 100 meters share a pin; open it to see each show's location, date, and attendance status. Zoom in to separate other nearby pins.</p>
+            <p class="show-explanation">The map uses OpenStreetMap tiles. Opening Map contacts the map tile provider. The Agenda view contains the same show details without map tiles.</p>
+            <p id="show-map-message" role="status" aria-live="polite"></p>
+            <button id="show-map-retry" class="button" type="button" hidden>Retry map</button>
+            <div id="show-map" aria-label="Interactive map of card show locations"></div>
         </section>
     </main>
     <footer class="site-footer">
-        <p>BlueFire Collectibles &middot; A BlueFire Syndicate branch</p>
+        <p>BlueFire Collectibles™ &middot; A BlueFire Syndicate™ branch</p>
         <a href="../">Back to the Syndicate &rarr;</a>
     </footer>
 </body>
